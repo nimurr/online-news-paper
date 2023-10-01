@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "img": "https://images.prothomalo.com/prothomalo-english%2F2023-10%2F17328c0b-6b21-4649-b738-6db9b7639654%2FKhaleda_Zia_s_abroad.webp?rect=0%2C0%2C512%2C341&auto=format%2Ccompress&fmt=webp&format=webp&w=300&dpr=1.0",
+    "title": "Local News: Community Event Draws Huge Crowd",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra, odio ut congue varius, nibh libero dapibus ipsum, id dignissim arcu sapien eu purus. Vivamus et nisl id justo sollicitudin lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, felis eu bibendum rhoncus, risus libero venenatis massa, ut laoreet orci lorem non odio. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.",
+    "location": "New York",
+    "upload_time": "2023-10-01T08:00:00Z",
+    "category": "Local"
+  },
+  {
+    "id": 2,
+    "img": "https://images.prothomalo.com/prothomalo-english%2F2023-10%2F30cac9fc-b3a4-4973-8662-781b3c10596f%2Fph.webp?rect=0%2C0%2C461%2C307&auto=format%2Ccompress&fmt=webp&format=webp&w=300&dpr=1.0",
+    "title": "Local Event: Charity Run Raises Funds for Homeless Shelter",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt ut lorem eu viverra. Nullam consectetur lacus nec purus lobortis aliquet. Nullam euismod odio vel neque posuere, non convallis velit congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam varius, justo vel tempor suscipit, justo mi varius dolor, eget facilisis tellus ante id quam. Donec quis bibendum velit.",
+    "location": "Los Angeles",
+    "upload_time": "2023-09-30T15:30:00Z",
+    "category": "Local"
+  },
+  {
+    "id": 3,
+    "img": "https://images.prothomalo.com/prothomalo-english%2F2023-10%2F270c8fe8-ef5b-48b5-9aca-29c272fd7240%2FKaisar_Kamal.webp?rect=0%2C0%2C480%2C320&auto=format%2Ccompress&fmt=webp&format=webp&w=300&dpr=1.0",
+    "title": "Local Business: New Small Business Opens in Downtown",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc sagittis vel elit at blandit. Fusce id interdum justo. Sed malesuada, augue a sollicitudin tincidunt, ipsum odio convallis urna, quis dignissim nisl lectus id dolor. Proin eu velit sed urna lacinia tristique non in justo.",
+    "location": "Chicago",
+    "upload_time": "2023-09-29T12:45:00Z",
+    "category": "Local"
+  },
+  {
+    "id": 4,
+    "img": "https://images.prothomalo.com/prothomalo-english%2F2023-10%2F452d28a5-6af9-430f-a234-9b673ffcda29%2Fprothomalo_bangla_2023_10_8a0ba4f7_e30b_402d_816c_6ffe379186ab_b528375b_1ddb_46ff_96d3_ec747f83ec53.webp?rect=1%2C0%2C1599%2C1066&auto=format%2Ccompress&fmt=webp&format=webp&w=300&dpr=1.0",
+    "title": "Local Sports: High School Team Wins State Championship",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at aliquam justo. Aliquam erat volutpat. Integer ut venenatis dolor. Cras lacinia purus eu justo condimentum, quis cursus libero vehicula. In facilisis, nisi sit amet tincidunt volutpat, nisi urna pellentesque elit, a tincidunt dolor lectus ac velit.",
+    "location": "San Francisco",
+    "upload_time": "2023-09-28T09:15:00Z",
+    "category": "Local"
+  },
+  {
+    "id": 5,
+    "img": "https://images.prothomalo.com/prothomalo-english%2F2022-02%2F92c897f2-7205-48f8-bdb6-e551f14ac8ae%2Fprothomalo_bangla_2022_02_1f3f056f_a471_431d_a218_4acda7fb9907_Law_minister.jpg?rect=40%2C0%2C989%2C659&auto=format%2Ccompress&fmt=webp&format=webp&w=300&dpr=1.0",
+    "title": "Local Politics: Mayor Announces New City Park Project",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut mi eu nisi hendrerit lacinia. Nam eu tortor id justo feugiat interdum. Etiam bibendum, dui id ullamcorper fringilla, lorem neque varius metus, in fringilla justo lorem nec ligula. Aenean condimentum dui id fermentum.",
+    "location": "Houston",
+    "upload_time": "2023-09-27T18:20:00Z",
+    "category": "Local"
+  }
+]
+
+
