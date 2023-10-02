@@ -7,7 +7,7 @@ import Foofer from './Page/Footer/Foofer'
 function App() {
 
   return (
-    <div>
+    <div className='bg-gray-50'>
       <Header></Header>
       <CetagoryItem></CetagoryItem>
       <Outlet></Outlet>

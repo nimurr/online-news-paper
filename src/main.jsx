@@ -35,6 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/international',
+        loader: () => fetch('Allnews.json'),
         element:<InternationalNews></InternationalNews>
       },
       {

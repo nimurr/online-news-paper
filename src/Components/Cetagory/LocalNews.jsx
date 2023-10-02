@@ -13,7 +13,7 @@ export default function LocalNews() {
     }, [])
     
     return (
-        <div>
+        <div className="my-4">
             <h2 className="text-center text-3xl font-semibold my-5">Local News</h2>
             <div className="grid grid-cols-2 gap-4 w-8/12 mx-auto">
                 {
