@@ -40,10 +40,12 @@ const router = createBrowserRouter([
       },
       {
         path:'/sports',
+        loader: () => fetch('Allnews.json'),
         element:<Sports></Sports>
       },
       {
         path:'/politics',
+        loader: () => fetch('Allnews.json'),
         element:<Politics></Politics>
       }
     ]

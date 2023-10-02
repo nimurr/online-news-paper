@@ -7,7 +7,7 @@ export default function InternationalNews() {
   const newsAll = useLoaderData();
   const [datas, setData] = useState([]);
   useEffect(() => {
-    const dataFind = newsAll.filter(data => data.category == 'International')
+    const dataFind = newsAll.filter(data => data.category == 'international')
     setData(dataFind)
   }, [])
 
@@ -15,7 +15,7 @@ export default function InternationalNews() {
     <div className="my-4">
       <h2 className="text-center text-3xl font-semibold my-5">International News</h2>
       <div>
-        <div className="grid grid-cols-2 gap-4 w-8/12 mx-auto">
+        <div className="grid md:grid-cols-2 gap-4 md:w-8/12 w-11/12 mx-auto">
           {
             datas.map(data => <div className=" border-2" key={data.id}>
               <div className="mx-auto">

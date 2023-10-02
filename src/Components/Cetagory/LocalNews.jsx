@@ -15,7 +15,7 @@ export default function LocalNews() {
     return (
         <div className="my-4">
             <h2 className="text-center text-3xl font-semibold my-5">Local News</h2>
-            <div className="grid grid-cols-2 gap-4 w-8/12 mx-auto">
+            <div className="grid md:grid-cols-2 gap-4 md:w-8/12 w-11/12 mx-auto">
                 {
                     datas.map(data => <div className=" border-2" key={data.id}>
                         <div className="mx-auto">

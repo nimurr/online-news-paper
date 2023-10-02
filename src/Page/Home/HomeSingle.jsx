@@ -18,7 +18,7 @@ export default function HomeSingle({ data }) {
 
     return (
         <div className="gap-4 shadow-red-400/50 shadow-[0px_0px_10px]  rounded-md overflow-hidden justify-between">
-            <img className="h-[35vh] w-full" src={img} alt="" />
+             <img className="h-[35vh] w-full" src={img} alt="" />
             <div className=" flex flex-col justify-between p-4">
                 <h2 className="font-semibold text-xl">{title}</h2>
                 <h3 className="font-semibold">Location: {location}</h3>
