@@ -13,48 +13,51 @@ import InternationalNews from './Page/International/InternationalNews.jsx';
 import Sports from './Page/Sports/Sports.jsx';
 import Politics from './Page/Politics/Politics.jsx';
 import Errorpage from './Page/Errorpage/Errorpage.jsx';
+import AuthProviter from './AuthProviter/AuthProviter.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    errorElement:<Errorpage></Errorpage>,
+    errorElement: <Errorpage></Errorpage>,
     element: <App></App>,
-    children:[
+    children: [
       {
-        path:'/',
+        path: '/',
         loader: () => fetch('Allnews.json'),
-        element:<Home></Home>
+        element: <Home></Home>
       },
       {
-        path:'/:id',
+        path: '/:id',
         loader: () => fetch('Allnews.json'),
-        element:<ViewDetailsnews></ViewDetailsnews>
+        element: <ViewDetailsnews></ViewDetailsnews>
       },
       {
-        path:'/local',
+        path: '/local',
         loader: () => fetch('Allnews.json'),
-        element:<LocalNews></LocalNews>
+        element: <LocalNews></LocalNews>
       },
       {
-        path:'/international',
+        path: '/international',
         loader: () => fetch('Allnews.json'),
-        element:<InternationalNews></InternationalNews>
+        element: <InternationalNews></InternationalNews>
       },
       {
-        path:'/sports',
+        path: '/sports',
         loader: () => fetch('Allnews.json'),
-        element:<Sports></Sports>
+        element: <Sports></Sports>
       },
       {
-        path:'/politics',
+        path: '/politics',
         loader: () => fetch('Allnews.json'),
-        element:<Politics></Politics>
+        element: <Politics></Politics>
       }
     ]
   },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProviter>
+      <RouterProvider router={router} />
+    </AuthProviter>
   </React.StrictMode>,
 )
