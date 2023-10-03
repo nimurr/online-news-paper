@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 body{
     font-family: 'Lato', sans-serif;
+    /* user-select: none; */
+    
 }
 
 .active{
     border-bottom: 2px solid rgb(243, 68, 68);
     color: rgb(243, 68, 68);
+}
+
+.commentsAll{
+    /* border: 2px solid gray;
+     */
+     background: #eee;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
 }

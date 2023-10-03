@@ -12,10 +12,12 @@ import LocalNews from './Components/Cetagory/LocalNews.jsx';
 import InternationalNews from './Page/International/InternationalNews.jsx';
 import Sports from './Page/Sports/Sports.jsx';
 import Politics from './Page/Politics/Politics.jsx';
+import Errorpage from './Page/Errorpage/Errorpage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
+    errorElement:<Errorpage></Errorpage>,
     element: <App></App>,
     children:[
       {

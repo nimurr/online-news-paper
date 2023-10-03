@@ -23,7 +23,7 @@ export default function Politics() {
                   <h3 className="font-semibold text-xl">{data.title}</h3>
                   <h3 className="font-semibold">Location : {data.location}</h3>
                   <p className="font-semibold text-sm">Category: {data.category}</p>
-                  <p className="text-justify my-5">{data.description.slice(0, 100)}</p>
+                  <p className="text-justify my-5">{data.description.slice(0, 100)}....</p>
                   <Link to={`/${data.id}`}><button className="px-4 py-2 text-white rounded font-semibold text-sm bg-red-500">View Details</button></Link>
                 </div>
               </div>

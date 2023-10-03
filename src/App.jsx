@@ -8,10 +8,12 @@ function App() {
 
   return (
     <div className='bg-gray-50'>
+
       <Header></Header>
       <CetagoryItem></CetagoryItem>
       <Outlet></Outlet>
       <Foofer></Foofer>
+      
     </div>
   )
 }
