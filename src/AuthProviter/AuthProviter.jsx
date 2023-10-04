@@ -5,35 +5,41 @@ import auth from "../Firebase/firebase.config";
 
 export const AuthContext = createContext(null);
 
-export default function AuthProviter({children}) {
-    const [user , setUser] = useState(null);
+export default function AuthProviter({ children }) {
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-    const signInWithGoogle = (provider) =>{
-       return signInWithPopup(auth , provider);
+    const signInWithGoogle = (provider) => {
+        setLoading(true)
+        return signInWithPopup(auth, provider);
     }
-    const logOut = () =>{
+    const logOut = () => {
+        setLoading(true)
         return signOut(auth)
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+            setLoading(false)
+
         });
-        return () =>{
+        return () => {
             unSubscribe();
         }
-    },[])
+    }, [])
 
 
     const authInfo = {
         signInWithGoogle,
         user,
-        logOut
+        logOut,
+        loading
     }
 
-  return (
-    <AuthContext.Provider value={authInfo}>
-        {children}
-    </AuthContext.Provider>
-  )
+    return (
+        <AuthContext.Provider value={authInfo}>
+            {children}
+        </AuthContext.Provider>
+    )
 }

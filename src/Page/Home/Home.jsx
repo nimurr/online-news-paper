@@ -1,11 +1,32 @@
 import { Link, useLoaderData } from "react-router-dom"
 import HomeSingle from "./HomeSingle";
 import { useEffect, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import  { Toaster } from "react-hot-toast";
 
 
 export default function Home() {
     const newsData = useLoaderData();
+    const [currentPage,setCurrentPage]=useState(1)
+    const [newsPerPage,setNewsPerPage]=useState(5);
+
+    
+    const dataLength = newsData.length;
+    // console.log(dataLength)
+    // const newsPerPage=5;
+    const totalPages =Math.ceil(dataLength/newsPerPage)
+    const startIndex =((currentPage-1)*newsPerPage);
+    const endIndex = startIndex + newsPerPage;
+    
+    const sliceddata = newsData.slice(startIndex,endIndex);
+
+// console.log(sliceddata)
+    // let numbers =[]
+    // for(let i=0;i<totalPages;i++){
+        
+    //     numbers.push(i)
+    // }
+    const numbers =[...Array(totalPages).keys()]
+
 
 
     const [searchData, setSearchData] = useState([]);
@@ -33,6 +54,10 @@ export default function Home() {
     // const handleShowAllBtn = () => {
     //     setShowAllData(!allDat);
     // }
+    const options=[3,5,7,10]
+    function setoption(event){
+        setNewsPerPage(parseInt(event.target.value))
+    }
 
     return (
         <div>
@@ -76,7 +101,7 @@ export default function Home() {
                      <div className="my-10 md:w-full gap-4 mx-auto grid md:grid-cols-3">
                             <div className="col-span-3 md:col-span-2  grid md:grid-cols-2 gap-4">
                                 {
-                                    newsData.map(data => <HomeSingle key={data.id} data={data}> </HomeSingle>)
+                                    sliceddata.map(data => <HomeSingle key={data.id} data={data}> </HomeSingle>)
                                 }
                             </div>
                             <div className="col-span-1 hidden md:block bg-blue-50 "> 
@@ -89,10 +114,23 @@ export default function Home() {
                     : <h2 className="text-4xl text-center my-10 font-bold text-red-500"> {ser ? '' : 'Search Result Data Not Found... !'} </h2>
             }
 
-            <div className="my-10 md:w-10/12 w-11/12 gap-4 mx-auto grid md:grid-cols-2" >
+            <div className="mt-10 md:w-10/12 w-11/12 gap-4 mx-auto grid md:grid-cols-2" >
                 {
+                    
                     ser.map(data => <HomeSingle key={data.id} data={data}></HomeSingle>)
                 }
+            </div>
+            <div className="pagination text-center ">
+                {
+                    numbers.map(number=><button className={`${currentPage===number+1 ? "bg-red-700 text-white":'bg-gray-300' } px-2 mx-1 rounded`} key={number} onClick={()=>setCurrentPage(number+1)}>{number+1}</button>)
+                }
+              <select value={newsPerPage} onChange={setoption} className="bg-blue-500 rounded p-1 text-white">
+                {
+                     
+                        options.map(option=><option key={option} value={option} >{option}</option>)
+                       
+                }
+              </select>
             </div>
 
 

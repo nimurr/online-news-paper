@@ -19,6 +19,7 @@
     "react-hot-toast": "^2.4.1",
     "react-marquee-slider": "^1.1.5",
     "react-router-dom": "^6.16.0",
+    "recharts": "^2.8.0",
     "sort-by": "^1.2.0"
   },
   "devDependencies": {

@@ -1,12 +1,15 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProviter/AuthProviter";
 import { GoogleAuthProvider } from "firebase/auth";
 import { Toaster } from "react-hot-toast";
 
 
 export default function CetagoryItem() {
-  const { signInWithGoogle, user ,logOut } = useContext(AuthContext)
+  const { signInWithGoogle, user, logOut } = useContext(AuthContext)
+  const location = useLocation();
+  const navigate = useNavigate();
+
 
   const handleLogin = () => {
     const provider = new GoogleAuthProvider();
@@ -14,6 +17,7 @@ export default function CetagoryItem() {
       .then(result => {
         // toast.success('Successfully toasted!')
         console.log(result.user)
+        navigate(location.state)
       })
       .catch(error => {
         // toast.error("This didn't work.")
@@ -22,6 +26,9 @@ export default function CetagoryItem() {
       })
   }
 
+  const handlelogout = () => {
+    logOut();
+  }
 
   // console.log(user.displayName)
   return (
@@ -36,35 +43,36 @@ export default function CetagoryItem() {
         <li><NavLink className='font-semibold  px-2 py-1 ' to='/international'>International</NavLink></li>
         <li><NavLink className='font-semibold  px-2 py-1 ' to='/sports'>Sports</NavLink></li>
         <li><NavLink className='font-semibold  px-2 py-1 ' to='/politics'>Politics</NavLink></li>
+        <li><NavLink className='font-semibold  px-2 py-1 ' to='/dashboard'>Dashboard</NavLink></li>
 
         {/* You can open the modal using document.getElementById('ID').showModal() method */}
         {
-          user && <img onClick={() => document.getElementById('my_modal_4').showModal()} className="w-10 rounded-full cursor-pointer" src={user.photoURL} alt="" />
+          user && <img onClick={() => document.getElementById('my_modal_4').showModal()} className="w-10 rounded-full cursor-pointer border-2 border-red-500" src={user.photoURL} alt="" />
         }
         {
-          user && 
+          user &&
           <dialog id="my_modal_4" className="modal">
-          <div className="modal-box">
-            <form method="dialog">
-              {/* if there is a button in form, it will close the modal */}
-              <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-            </form>
-            <div className="text-center my-5">
-              <img className="w-10 mx-auto rounded-full" src={user.photoURL} alt="" />
-              <h3 className="font-bold text-lg">{user.displayName}</h3>
-              <p className="py-2">{user.email}</p>
+            <div className="modal-box">
+              <form method="dialog">
+                {/* if there is a button in form, it will close the modal */}
+                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+              </form>
+              <div className="text-center my-5">
+                <img className="w-10 mx-auto rounded-full" src={user.photoURL} alt="" />
+                <h3 className="font-bold text-lg">{user.displayName}</h3>
+                <p className="py-2">{user.email}</p>
+              </div>
             </div>
-          </div>
-        </dialog>
+          </dialog>
         }
 
 
-       {
-         !user ?
-         <button className="btn bg-red-500 hover:bg-red-600 text-white" onClick={() => document.getElementById('my_modal_3').showModal()}>Login</button>
-        : <button className="btn bg-red-500 hover:bg-red-600 text-white">logOut</button>
-       }
-        
+        {
+          !user ?
+            <button className="btn bg-red-500 hover:bg-red-600 text-white" onClick={() => document.getElementById('my_modal_3').showModal()}><i className='bx bxs-user'></i> Login</button>
+            : <button onClick={handlelogout} className="btn bg-red-500 hover:bg-red-600 text-white">logOut <i className='bx text-xl bx-right-arrow-alt'></i></button>
+        }
+
         {
           !user &&
           <dialog id="my_modal_3" className="modal">

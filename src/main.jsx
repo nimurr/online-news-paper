@@ -14,6 +14,9 @@ import Sports from './Page/Sports/Sports.jsx';
 import Politics from './Page/Politics/Politics.jsx';
 import Errorpage from './Page/Errorpage/Errorpage.jsx';
 import AuthProviter from './AuthProviter/AuthProviter.jsx';
+import PrivetRoute from './PrivetRoute/PrivetRoute.jsx';
+import Dahsboard from './Page/Dahsboard/Dahsboard.jsx';
+import Login from './Components/Login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +48,15 @@ const router = createBrowserRouter([
         path: '/sports',
         loader: () => fetch('Allnews.json'),
         element: <Sports></Sports>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/dashboard',
+        loader: () => fetch('Allnews.json'),
+        element: <PrivetRoute><Dahsboard></Dahsboard></PrivetRoute>
       },
       {
         path: '/politics',
